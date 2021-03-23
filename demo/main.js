@@ -105,12 +105,8 @@ document.addEventListener("DOMContentLoaded", function () {
               '<div class="card"><p style="align-self:center;">' +
               "Input label:" +
               (index + 1) +
-              ") " +
-              data.iType +
-              " =>>> " +
-              (index + 1) +
               ". " +
-              data.iType +
+              data.iName +
               " Input" +
               "</p></div>";
           });
@@ -136,12 +132,13 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("inputVal").innerHTML = "";
 
     data[formName].map((data, index) => {
-      document.getElementById("inputVal").innerHTML +=
+        document.getElementById("inputVal").innerHTML +=
         '<div class="card"><p style="align-self:center;">' +
         "Input label:" +
         (index + 1) +
         ". " +
-        data.iType + " Input" +
+        data.iName +
+        " Input" +
         "</p></div>";
     });
     document.getElementById("fName").disabled = true;
