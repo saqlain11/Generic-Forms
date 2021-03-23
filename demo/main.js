@@ -69,9 +69,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  document.getElementById("removeblock").addEventListener("click", function () {
-    flowy.deleteBlocks();
-  });
+  //   document.getElementById("removeblock").addEventListener("click", function () {
+  //     flowy.deleteBlocks();
+  //   });
   var aclick = false;
   var noinfo = false;
   var beginTouch = function (event) {
@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.target.closest(".create-flowy")) {
       noinfo = true;
     }
-
   };
   var checkTouch = function (event) {
     aclick = false;
@@ -103,12 +102,17 @@ document.addEventListener("DOMContentLoaded", function () {
           document.getElementById("fName").disabled = true;
           data[formName].map((data, index) => {
             document.getElementById("inputVal").innerHTML +=
-            '<div class="card"><p style="align-self:center;">' +
-            "Input label:" +
-            (index + 1) +
-            ") " +
-            data.iName +
-            "</p></div>";
+              '<div class="card"><p style="align-self:center;">' +
+              "Input label:" +
+              (index + 1) +
+              ") " +
+              data.iType +
+              " =>>> " +
+              (index + 1) +
+              ". " +
+              data.iType +
+              " Input" +
+              "</p></div>";
           });
         }
         rightcard = true;
@@ -136,12 +140,12 @@ document.addEventListener("DOMContentLoaded", function () {
         '<div class="card"><p style="align-self:center;">' +
         "Input label:" +
         (index + 1) +
-        ") " +
-        data.iName +
+        ". " +
+        data.iType + " Input" +
         "</p></div>";
     });
     document.getElementById("fName").disabled = true;
-    alert('Field added to '+formName);
+    alert("Field added to " + formName);
     console.log("Data,", data);
     return false;
   };
